@@ -1,0 +1,17 @@
+pstree 命令，
+-a arguments，显示进行的完整命令行参数
+-s parents， 显示该进程所有父进程
+-p pids，显示每个进行的pid
+回显中：
+{xxx},pid      #这个pid为子线程
+root@mciserver:~# pstree -asp 2288
+systemd,1
+  `-manage-main,1069
+      `-manage-agent,1136 10.6.210.212:7978
+          `-remote-play,2288 8800 5 VM010226185035 0 console /data/local/tmp/sun_remote_0
+              |-{remote-play},2582               
+              |-{remote-play},2583
+              |-{remote-play},2754
+              |-{remote-play},2755
+              |-{remote-play},2763
+              `-{remote-play},2779
